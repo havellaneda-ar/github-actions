@@ -1,13 +1,11 @@
 name: Test Dev
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - development
     types:
       - closed
+
 jobs:
   terraform_plan_dev:
     name: Terraform Plan - Dev
