@@ -1,16 +1,13 @@
 name: Test Dev
 on:
+  push:
+    branches:
+      - master
   pull_request:
     branches:
       - development
-    paths:
-      - 'dev/**'
     types:
       - closed
-  push:
-    branches-ignore:
-      - master
-
 jobs:
   terraform_plan_dev:
     name: Terraform Plan - Dev
