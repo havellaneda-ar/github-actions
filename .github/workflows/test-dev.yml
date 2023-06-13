@@ -8,7 +8,7 @@ on:
       - 'dev/**'
   push:
     branches:
-      - main
+      - master
 
 jobs:
   terraform_plan_dev:
