@@ -1,0 +1,30 @@
+name: Plan Terraform
+
+on:
+  pull_request:
+    branches:
+      - development
+    paths:
+      - 'dev/**'
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform_plan_dev:
+    name: Terraform Plan - Dev
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Terraform Plan
+        run: |
+          cd dev
+          touch test-success
+          # Aquí colocas los comandos para ejecutar el plan de Terraform en la carpeta "cluster-dev"
+          # Por ejemplo:
+          # cd cluster-dev
+          # terraform plan
+
