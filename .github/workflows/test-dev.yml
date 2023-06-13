@@ -5,9 +5,11 @@ on:
       - development
     paths:
       - 'dev/**'
-#  push:
-#    branches:
-#      - master
+    types:
+      - closed
+  push:
+    branches-ignore:
+      - master
 
 jobs:
   terraform_plan_dev:
@@ -21,9 +23,6 @@ jobs:
       - name: Run Terraform Plan
         run: |
           cd dev
-          touch test-success
-          # Aquí colocas los comandos para ejecutar el plan de Terraform en la carpeta "cluster-dev"
-          # Por ejemplo:
-          # cd cluster-dev
-          # terraform plan
+          echo "TEST SUCCESS"
+
 
